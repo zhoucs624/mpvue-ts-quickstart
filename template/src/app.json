@@ -1,0 +1,28 @@
+{
+  "pages": [
+    "pages/index/main",
+    "pages/logs/main",
+    {{#vuex}}
+    "pages/counter/main",
+    {{/vuex}}
+    "pages/page2/main",
+    "pages/testExtend/main"
+  ],
+  "subPackages": [
+    {
+      "root": "packageA",
+      "pages": [
+        "pages/index/main"
+      ]
+    }
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "usingComponents": { {{#if_eq ui "vant"}}
+    "van-button": "/@vant/weapp/dist/button/index"{{/if_eq}}
+  }
+}

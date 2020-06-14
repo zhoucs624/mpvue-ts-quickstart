@@ -1,0 +1,57 @@
+{
+  "root": true,
+  "env": {
+    "browser": false,
+    "node": true,
+    "es6": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:vue/essential",
+    "@vue/typescript",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "parser": "vue-eslint-parser",
+  "parserOptions": {
+    "parser": "@typescript-eslint/parser",
+    "sourceType": "module"
+  },
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "rules": {
+    "@typescript-eslint/ban-types": [
+      "error",
+      {
+        "types": {
+          // add a custom message to help explain why not to use it
+          "Foo": "Don't use Far because it is unsafe",
+          // add a custom message, AND tell the plugin how to fix it
+          "String": {
+            "message": "Use string instead",
+            "fixWith": "string"
+          },
+          "{}": {
+            "message": "Use object instead",
+            "fixWith": "object"
+          }
+        }
+      }
+    ],
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "linebreak-style": [
+      "error",
+      "unix"
+    ],
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "semi": [
+      "error",
+      "always"
+    ]
+  }
+}
